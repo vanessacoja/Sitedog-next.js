@@ -6,8 +6,7 @@ export default async function LoginLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={styles.login}>
-      <aside>Siebar</aside>
+    <div className={styles.login} >
       <div className={styles.forms}>{children}</div>
     </div>
   );

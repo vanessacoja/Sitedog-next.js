@@ -16,10 +16,13 @@ export default function Header() {
           />
         </Link>
         <Link href="/">Dogs</Link>
-        <Link className={styles.login} href="/login">
+        <Link className={styles} href="/inus">犬
+        </Link>
+       <Link className={styles.login} href="/login">
           Login / Criar
         </Link>
       </nav>
     </header>
   );
 }
+ 

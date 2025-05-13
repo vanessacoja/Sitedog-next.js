@@ -8,7 +8,8 @@
 .login::before {
   display: block;
   content: "";
-  background: url("/my-app/public/asserts/login.jpg") no-repeat center center;
+  background: url("/asserts/login.jpg")
+    no-repeat center center;
   background-size: cover;
 }
 
