@@ -8,8 +8,6 @@ type InputProps = React.ComponentProps<"input"> & {
 export default function Input({ label, error, ...props }: InputProps) {
   return (
     <div className={styles.wrapper}>
-      / // quando o label for e o mesmo que o id do input, o navegador vai focar
-      no input
       <label className={styles.label} htmlFor={props.name}>
         {label}
       </label>
