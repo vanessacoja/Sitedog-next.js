@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default async function PerdeuPage() {
   return (
-    <main>
-      <h1>Perdeu</h1>
-    </main>
+    <div className="animeLeft">
+      <h1 className="title">Perdeu a senha?</h1>
+    </div>
   );
 }

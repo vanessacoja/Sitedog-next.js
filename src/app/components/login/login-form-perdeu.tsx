@@ -13,15 +13,15 @@ function FormButton() {
   return (
     <>
       {pending ? (
-        <Button disabled={pending}>processando...</Button>
+        <Button disabled={pending}>Enviando...</Button>
       ) : (
-        <Button>Cadastrar</Button>
+        <Button>Enviar email</Button>
       )}
     </>
   );
 }
 
-export default function LoginCriarForm() {
+export default function LoginPerdeuForm() {
   const userPost = async (formData: FormData) => {
     // Example implementation: replace with your actual API call logic
     try {
@@ -31,15 +31,27 @@ export default function LoginCriarForm() {
       });
       const data = await response.json();
       if (!response.ok) {
-        return { ok: false, error: data.message || "Failed to create user", data: null };
+        return {
+          ok: false,
+          error: data.message || "Failed to create user",
+          data: null,
+        };
       }
       return { ok: true, error: "", data };
     } catch (error: any) {
-      return { ok: false, error: error.message || "An unexpected error occurred", data: null };
+      return {
+        ok: false,
+        error: error.message || "An unexpected error occurred",
+        data: null,
+      };
     }
   };
 
-  const [state, action] = useFormState<{ ok: boolean; error: string; data: any }>(async (formData) => await userPost(formData), {
+  const [state, action] = useFormState<{
+    ok: boolean;
+    error: string;
+    data: any;
+  }>(async (formData) => await userPost(formData), {
     ok: false,
     error: "",
     data: null,
@@ -51,9 +63,7 @@ export default function LoginCriarForm() {
 
   return (
     <form action={action} className={styles.form}>
-      <Input label="Usuário" name="username" type="text" />
-      <Input label="Email" name="email" type="email" />
-      <Input label="Senha" name="password" type="password" />
+      <Input label="Email /Usuário" name="login" type="text" />
       <ErrorMessage error={state.error} />
       <FormButton />
     </form>
